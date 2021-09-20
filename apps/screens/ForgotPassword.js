@@ -1,26 +1,20 @@
 import React, { useState } from 'react';
-import { View,Text, TextInput,Button, TouchableOpacity } from 'react-native';
+import { View,Text, TextInput,Button } from 'react-native';
 
 
-export default function LoginScreen({ route, navigation }) {
+export default function ForgotPassword({ route, navigation }) {
 
     const[emailId, setEmailId] = useState('')
-    const[password, setPassword] = useState('')
 
-    const handleClickForgot = () => {
-        navigation.navigate('ForgotPassword')
-    }
     const handleClick = () => {
 
-        if(emailId == ''){
+        if (emailId == '') {
             alert("email id is blank")
-        } else if(password == ''){
-            alert("password is blank")
-        } else{
+        } else {
             alert("server call")
-            navigation.navigate('FlatListDemo1');
         }
     }
+
 
 
     return(
@@ -42,20 +36,7 @@ export default function LoginScreen({ route, navigation }) {
             </View>
 
             
-             <View style={{ marginBottom: 20, marginHorizontal: 40 }}>
-                <Text>{'Passwod '}</Text>
-                <TextInput
-                    style={{ width: '100%', borderBottomWidth: 1, borderBottomColor: 'grey', height: 40, }}
-                    autoCapitalize="none"
-                    returnKeyType="next"
-                    maxLength={50}
-                    placeholder={'like  1234@123'}
-                    onChangeText={text => setPassword(text)}
-                    value={password}
-                    defaultValue={password}
-                    secureTextEntry={false}
-                />
-            </View>
+            
 
             
            
@@ -68,13 +49,6 @@ export default function LoginScreen({ route, navigation }) {
                     onPress={handleClick}
                 />
             </View>
-
-            <TouchableOpacity 
-                style={{marginTop:25}}
-                onPress={handleClickForgot}
-            >
-                <Text style={{fontSize:25 , textAlign:'center',  textDecorationLine: 'underline',}}>{'Forgot Password'}</Text>
-            </TouchableOpacity>
 
          </View>
     );
