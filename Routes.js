@@ -7,6 +7,7 @@ import FlatListDemo1 from './apps/screens/FlatListDemo1';
 import ChangePassword from './apps/screens/ChangePassword';
 import LoginScreen from './apps/screens/LoginScreen';
 import ForgotPassword from './apps/screens/ForgotPassword';
+import ContactsList from './apps/screens/ContactsList';
 
 const Stack = createNativeStackNavigator();
   
@@ -23,6 +24,7 @@ const Stack = createNativeStackNavigator();
           <Stack.Screen name="FlatListDemo" component={FlatListDemo} />
           <Stack.Screen name="ChangePassword" component={ChangePassword} />
           <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+          <Stack.Screen name="ContactsList" component={ContactsList} />
           
          
         </Stack.Navigator>

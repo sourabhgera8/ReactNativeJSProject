@@ -1,0 +1,15 @@
+export default contacts= [
+    {id:1, name : 'keshav gera', mobile : '9654267338'},
+    {id:2, name : 'sourabh gera', mobile : '9711417198'},
+    {id:3, name : 'Ram ji', mobile : '9654262322'},
+    {id:4, name : 'Shamish gera', mobile : '9711417198'},
+    {id:5, name : 'mohan ', mobile : '9711417198'},
+    {id:6, name : 'leela gera', mobile : '9711517198'},
+    {id:7, name : 'rekha gera', mobile : '9715417198'},
+    {id:8, name : 'tabhbh ', mobile : '9711417198'},
+    {id:9, name : 'jyoti gera', mobile : '9711417198'},
+    {id:10, name : 'lallu ', mobile : '9711417198'},
+    {id:11, name : 'mannu ', mobile : '9711417198'},
+    {id:12, name : 'sunil ', mobile : '9711417198'},
+    {id:13, name : 'amitabh ', mobile : '9711417198'},
+];

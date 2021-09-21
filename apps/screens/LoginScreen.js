@@ -12,14 +12,16 @@ export default function LoginScreen({ route, navigation }) {
     }
     const handleClick = () => {
 
-        if(emailId == ''){
-            alert("email id is blank")
-        } else if(password == ''){
-            alert("password is blank")
-        } else{
-            alert("server call")
-            navigation.navigate('FlatListDemo1');
-        }
+        navigation.navigate('ContactsList');
+
+        // if(emailId == ''){
+        //     alert("email id is blank")
+        // } else if(password == ''){
+        //     alert("password is blank")
+        // } else{
+        //     alert("server call")
+        //     navigation.navigate('FlatListDemo1');          
+        // }
     }
 
 
