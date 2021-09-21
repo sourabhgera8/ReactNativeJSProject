@@ -8,12 +8,13 @@ import ChangePassword from './apps/screens/ChangePassword';
 import LoginScreen from './apps/screens/LoginScreen';
 import ForgotPassword from './apps/screens/ForgotPassword';
 import ContactsList from './apps/screens/ContactsList';
+import FlatListApi from './apps/screens/FlatListApi';
 
 const Stack = createNativeStackNavigator();
   
   function Routes() {
     return (
-      <NavigationContainer>
+      <NavigationContainer>        
         <Stack.Navigator initialRouteName="SplashScreen">
 
           <Stack.Screen  options={{headerShown: false}}  
@@ -25,6 +26,7 @@ const Stack = createNativeStackNavigator();
           <Stack.Screen name="ChangePassword" component={ChangePassword} />
           <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
           <Stack.Screen name="ContactsList" component={ContactsList} />
+          <Stack.Screen name="FlatListApi" component={FlatListApi} />
           
          
         </Stack.Navigator>

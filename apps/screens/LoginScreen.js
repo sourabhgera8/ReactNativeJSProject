@@ -10,6 +10,13 @@ export default function LoginScreen({ route, navigation }) {
     const handleClickForgot = () => {
         navigation.navigate('ForgotPassword')
     }
+    const handleClickContactList = () => {
+        navigation.navigate('ContactsList')
+    }
+    const handleClickServerData = () => {
+        navigation.navigate('FlatListApi')
+    }
+
     const handleClick = () => {
 
         navigation.navigate('ContactsList');
@@ -75,7 +82,24 @@ export default function LoginScreen({ route, navigation }) {
                 style={{marginTop:25}}
                 onPress={handleClickForgot}
             >
-                <Text style={{fontSize:25 , textAlign:'center',  textDecorationLine: 'underline',}}>{'Forgot Password'}</Text>
+                <Text style={{fontSize:25 , textAlign:'center',  textDecorationLine: 'underline',}}>
+                    {'Forgot Password'}</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+                style={{marginTop:25}}
+                onPress={handleClickContactList}
+            >
+                <Text style={{fontSize:25 , textAlign:'center',  textDecorationLine: 'underline',}}>
+                    {'ContactList Dummy data'}</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+                style={{marginTop:25}}
+                onPress={handleClickServerData}
+            >
+                <Text style={{fontSize:25 , textAlign:'center',  textDecorationLine: 'underline',}}>
+                    {'Api Server Data using axios'}</Text>
             </TouchableOpacity>
 
          </View>
