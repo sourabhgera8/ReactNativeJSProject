@@ -18,16 +18,16 @@ export default function FlatListApi({ route, navigation }) {
       .then(function (response) {
         // handle success
         console.log("S____________________ response ", response);
-
+        
         setData(response.data)
       })
       .catch(function (error) {
         // handle error
+        alert("something went error")
         console.log("S____________________ error ", error);
       })
       .then(function () {
-        console.log("S____________________  then ");
-        // always executed
+        console.log("S____________________  finally  ");
       });
   }
 

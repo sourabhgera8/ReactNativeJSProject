@@ -9,6 +9,7 @@ import LoginScreen from './apps/screens/LoginScreen';
 import ForgotPassword from './apps/screens/ForgotPassword';
 import ContactsList from './apps/screens/ContactsList';
 import FlatListApi from './apps/screens/FlatListApi';
+import FlatListApiModal from './apps/screens/FlatListApiModal';
 
 const Stack = createNativeStackNavigator();
   
@@ -21,12 +22,13 @@ const Stack = createNativeStackNavigator();
           name="SplashScreen" component={SplashScreen} />
           <Stack.Screen name="LoginScreen" component={LoginScreen} />
 
-          <Stack.Screen name="FlatListDemo1" component={FlatListDemo1} />
-          <Stack.Screen name="FlatListDemo" component={FlatListDemo} />
           <Stack.Screen name="ChangePassword" component={ChangePassword} />
           <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
           <Stack.Screen name="ContactsList" component={ContactsList} />
+          <Stack.Screen name="FlatListDemo1" component={FlatListDemo1} />
+          <Stack.Screen name="FlatListDemo" component={FlatListDemo} />
           <Stack.Screen name="FlatListApi" component={FlatListApi} />
+          <Stack.Screen name="FlatListApiModal" component={FlatListApiModal} />
           
          
         </Stack.Navigator>

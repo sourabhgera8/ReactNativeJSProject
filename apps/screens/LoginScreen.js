@@ -16,6 +16,9 @@ export default function LoginScreen({ route, navigation }) {
     const handleClickServerData = () => {
         navigation.navigate('FlatListApi')
     }
+    const handleClickWithmodal = () => {
+        navigation.navigate('FlatListApiModal')
+    }
 
     const handleClick = () => {
 
@@ -100,6 +103,14 @@ export default function LoginScreen({ route, navigation }) {
             >
                 <Text style={{fontSize:25 , textAlign:'center',  textDecorationLine: 'underline',}}>
                     {'Api Server Data using axios'}</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+                style={{marginTop:25}}
+                onPress={handleClickWithmodal}
+            >
+                <Text style={{fontSize:25 , textAlign:'center',  textDecorationLine: 'underline',}}>
+                    {'Falt List With Modal'}</Text>
             </TouchableOpacity>
 
          </View>
