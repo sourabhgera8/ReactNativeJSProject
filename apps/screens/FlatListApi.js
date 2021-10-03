@@ -9,6 +9,7 @@ export default function FlatListApi({ route, navigation }) {
 
   useEffect(() => {
       initApi();
+    
   }, [])
 
   const initApi = () => {
