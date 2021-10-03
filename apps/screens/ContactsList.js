@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { View,Text, Image, ScrollView, FlatList } from 'react-native';
+import { View,Text, Image, ScrollView, FlatList, TouchableOpacity} from 'react-native';
+import { getItem, setItem} from '../utils/localStorage';
 
 import contacts from './contacts'
 
 export default function ContactsList({ route, navigation }) {
+
+    const logoutHandleClick = async() => {
+      console.warn(await getItem('userId'));
+      await  setItem('isLoggedIn', JSON.stringify(false))
+      navigation.navigate('LoginScreen');
+    }
 
 
       const renderItem = ({index, item }) => (
@@ -33,6 +40,13 @@ export default function ContactsList({ route, navigation }) {
             <Text style={{textAlign:'center', fontSize:18, marginBottom:10,backgroundColor: '#ebebeb'}}>
                 {"Sita ram Maheshwari"} {"Jai shri ram ji"} {"contacts"}
             </Text>
+          
+            <TouchableOpacity
+              onPress={logoutHandleClick}
+            >
+              <Text style={{ fontSize: 25, textAlign: 'center' }} >{'logout'} </Text>
+            </TouchableOpacity>
+
             <FlatList
                 data={contacts}
                 renderItem={renderItem}

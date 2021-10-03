@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View,Text, TextInput,Button, TouchableOpacity } from 'react-native';
+import { View,Text, TextInput,Button, TouchableOpacity} from 'react-native';
+import { getItem, setItem} from '../utils/localStorage';
 
 
 export default function LoginScreen({ route, navigation }) {
@@ -7,31 +8,18 @@ export default function LoginScreen({ route, navigation }) {
     const[emailId, setEmailId] = useState('')
     const[password, setPassword] = useState('')
 
-    const handleClickForgot = () => {
-        navigation.navigate('ForgotPassword')
-    }
-    const handleClickContactList = () => {
-        navigation.navigate('ContactsList')
-    }
-    const handleClickServerData = () => {
-        navigation.navigate('FlatListApi')
-    }
-    const handleClickWithmodal = () => {
-        navigation.navigate('FlatListApiModal')
-    }
 
-    const handleClick = () => {
+    const loginHandleClick = async() => {
 
-        navigation.navigate('ContactsList');
-
-        // if(emailId == ''){
-        //     alert("email id is blank")
-        // } else if(password == ''){
-        //     alert("password is blank")
-        // } else{
-        //     alert("server call")
-        //     navigation.navigate('FlatListDemo1');          
-        // }
+        if(emailId == ''){
+            alert("email id is blank")
+        } else if(password == ''){
+            alert("password is blank")
+        } else{
+            await setItem('isLoggedIn', JSON.stringify(true))
+            await setItem('userId', 6914)
+            navigation.navigate('ContactsList');          
+        }
     }
 
 
@@ -75,44 +63,10 @@ export default function LoginScreen({ route, navigation }) {
             <View style={{ marginHorizontal: 40, marginVertical: 5 }}>
                 <Button style={{ flex: 1, marginTop: 10, marginBottom: 10, }}
                     title="Submit"
-                    // onPress={() => navigation.navigate('RegisterScreen')}
-                    // onPress={() => alert(currentPassword +" np " + newPassword+"  cofp "+confirmPassword)}
-                    onPress={handleClick}
+                    onPress={loginHandleClick}
                 />
             </View>
 
-            <TouchableOpacity 
-                style={{marginTop:25}}
-                onPress={handleClickForgot}
-            >
-                <Text style={{fontSize:25 , textAlign:'center',  textDecorationLine: 'underline',}}>
-                    {'Forgot Password'}</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-                style={{marginTop:25}}
-                onPress={handleClickContactList}
-            >
-                <Text style={{fontSize:25 , textAlign:'center',  textDecorationLine: 'underline',}}>
-                    {'ContactList Dummy data'}</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-                style={{marginTop:25}}
-                onPress={handleClickServerData}
-            >
-                <Text style={{fontSize:25 , textAlign:'center',  textDecorationLine: 'underline',}}>
-                    {'Api Server Data using axios'}</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-                style={{marginTop:25}}
-                onPress={handleClickWithmodal}
-            >
-                <Text style={{fontSize:25 , textAlign:'center',  textDecorationLine: 'underline',}}>
-                    {'Falt List With Modal'}</Text>
-            </TouchableOpacity>
-
-         </View>
+        </View>
     );
 }

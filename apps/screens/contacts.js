@@ -1,5 +1,5 @@
 export default contacts= [
-    {id:1, name : 'keshav gera', mobile : '9654267338'},
+    {id:1, name : 'Ram ji', mobile : '9654267338',  emergencyNumber : '9654267338'  },
     {id:2, name : 'sourabh gera', mobile : '9711417198'},
     {id:3, name : 'Ram ji', mobile : '9654262322'},
     {id:4, name : 'Shamish gera', mobile : '9711417198'},
