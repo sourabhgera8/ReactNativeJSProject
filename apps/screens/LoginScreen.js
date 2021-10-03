@@ -1,18 +1,29 @@
-import React, { useState } from 'react';
-import { View,Text, TextInput,Button, TouchableOpacity} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View,Text, TextInput,Button, Image} from 'react-native';
 import { getItem, setItem} from '../utils/localStorage';
 
+const validator = require('validator');
 
 export default function LoginScreen({ route, navigation }) {
 
     const[emailId, setEmailId] = useState('')
     const[password, setPassword] = useState('')
 
+    useEffect( () =>{
+        const unsubscribe = navigation.addListener('focus', () => {
+            setEmailId('');
+            setPassword('');
+          });
+          return unsubscribe;
+    },[navigation])
+
 
     const loginHandleClick = async() => {
 
         if(emailId == ''){
             alert("email id is blank")
+        } else if(!validator.isEmail(emailId)){
+            alert("email id is not valid")
         } else if(password == ''){
             alert("password is blank")
         } else{
@@ -22,11 +33,20 @@ export default function LoginScreen({ route, navigation }) {
         }
     }
 
+  
 
     return(
          <View style={{marginTop:40}}>
+
+            <View style={{ justifyContent: 'center', alignItems: 'center', }}  >
+                <Image
+                    style={{ width: 300, height: 200, alignItems: 'center' }}
+                    resizeMode="contain"
+                    source={require('../assets/sitaramphoto.jpg')}
+                />
+            </View>
             
-             <View style={{ marginBottom: 20, marginHorizontal: 40 }}>
+             <View style={{marginTop:50, marginBottom: 20, marginHorizontal: 40 }}>
                 <Text>{'Email Id'}</Text>
                 <TextInput
                     style={{ width: '100%', borderBottomWidth: 1, borderBottomColor: 'grey', height: 40, }}
@@ -53,7 +73,7 @@ export default function LoginScreen({ route, navigation }) {
                     onChangeText={text => setPassword(text)}
                     value={password}
                     defaultValue={password}
-                    secureTextEntry={false}
+                    secureTextEntry={true}
                 />
             </View>
 

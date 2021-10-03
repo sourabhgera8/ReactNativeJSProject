@@ -27,12 +27,15 @@ const Stack = createNativeStackNavigator();
           name="SplashScreen" component={SplashScreen} />
 
 
-          <Stack.Screen name="LoginScreen" component={LoginScreen} />
+          <Stack.Screen 
+          options={{headerShown: false}}
+          name="LoginScreen" component={LoginScreen} />
           <Stack.Screen name="LoginScreen1" component={LoginScreen1} />
 
           <Stack.Screen name="ChangePassword" component={ChangePassword} />
           <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
-          <Stack.Screen name="ContactsList" component={ContactsList} />
+          <Stack.Screen  options={{headerShown: false}}
+                    name="ContactsList" component={ContactsList} />
           <Stack.Screen name="FlatListDemo1" component={FlatListDemo1} />
           <Stack.Screen name="FlatListDemo" component={FlatListDemo} />
           <Stack.Screen name="FlatListApi" component={FlatListApi} />
