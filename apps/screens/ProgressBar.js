@@ -1,12 +1,15 @@
-import React, { useEffect, useReducer, useRef, useState } from 'react';
-import { View, Text, Image, ScrollView, FlatList, Animated } from 'react-native';
+import React, { useEffect,  useRef, useState } from 'react';
+import { View, Text, Animated } from 'react-native';
 
 export default function ProgressBar({ route, navigation }) {
     const [index, setIndex] = useState(0);
 
     useEffect(() => {
         const interval = setTimeout(() => {
-            setIndex((index + 1) % (10 + 1));
+            console.warn("K___________ useEffect ", index);
+            if(index<10){
+                setIndex((index + 1) % (10 + 1));
+            }
         }, 1000)
 
         return () => {
@@ -51,8 +54,7 @@ export default function ProgressBar({ route, navigation }) {
                     }}
                     style={{
                         height,
-                        backgroundColor: 'rgba(0,0,0,0.1)',
-                        // backgroundColor: 'red',
+                        backgroundColor: 'rgba(0,0,0,0.1)',                        
                         borderRadius: height,
                         overflow: 'hidden'
                     }}
@@ -61,7 +63,6 @@ export default function ProgressBar({ route, navigation }) {
                         height,
                         width: '100%',
                         borderRadius: height,
-                        // backgroundColor: 'green',
                         backgroundColor: 'rgba(0,0,0,0.5)',
                         position: 'absolute',
                         left: 0,
@@ -85,7 +86,7 @@ export default function ProgressBar({ route, navigation }) {
         }}>
 
 
-            <Progress step={index} steps={10} height={20} />
+            <Progress step={index} steps={10} height={50} />
 
         </View>
     );
