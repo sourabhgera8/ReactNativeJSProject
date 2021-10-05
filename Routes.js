@@ -14,6 +14,7 @@ import Dashboard from './apps/screens/Dashboard';
 import PercentageBar from './apps/screens/PercentageBar';
 import ProgressBar from './apps/screens/ProgressBar';
 import LoginScreen1 from './apps/screens/LoginScreen1';
+import DropDownScreen from './apps/screens/DropDownScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -21,7 +22,7 @@ const Stack = createNativeStackNavigator();
   function Routes() {
     return (
       <NavigationContainer>        
-        <Stack.Navigator initialRouteName="ProgressBar">
+        <Stack.Navigator initialRouteName="DropDownScreen">
 
           <Stack.Screen  options={{headerShown: false}}  
           name="SplashScreen" component={SplashScreen} />
@@ -43,6 +44,7 @@ const Stack = createNativeStackNavigator();
           <Stack.Screen name="Dashboard" component={Dashboard} />
           <Stack.Screen name="PercentageBar" component={PercentageBar} />
           <Stack.Screen name="ProgressBar" component={ProgressBar} />
+          <Stack.Screen name="DropDownScreen" component={DropDownScreen} />
           
          
         </Stack.Navigator>
