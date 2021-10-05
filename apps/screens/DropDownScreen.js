@@ -18,7 +18,7 @@ export default function DropDownScreen({ route, navigation }) {
   ]);
   const [gender, setGender] = useState(0);
   const [genderError, setGenderError] = useState('');
-	const [isCheckOrder, setIsCheckOrder] = useState(true);
+	const [isCurrentPermanent, setIsCurrentPermanent] = useState(true);
 
   const onClickGender = (itemValue, itemIndex) => {
     setGender(itemValue);
@@ -65,7 +65,7 @@ export default function DropDownScreen({ route, navigation }) {
           // initial={0}
           animation={false}
           formHorizontal={true}
-          onPress={(value) => setIsCheckOrder(!value)}
+          onPress={(value) => setIsCurrentPermanent(!value)}
         />
 
       </View>
