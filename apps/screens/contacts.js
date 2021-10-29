@@ -8,7 +8,7 @@ export default contacts= [
     {id:7, name : 'rekha gera', mobile : '8826420912'},
     {id:8, name : 'tabhbh ', mobile : '8826420912'},
     {id:9, name : 'jyoti gera', mobile : '8826420912'},
-    {id:10, name : 'lallu ', mobile : '8826420912'},
+    {id:10, name : 'lallu ', mobile : '8826420912', emergencyNumber : '9898965252' },
     {id:11, name : 'mannu ', mobile : '8826420912'},
     {id:12, name : 'sunil ', mobile : '8826420912'},
     {id:13, name : 'amitabh ', mobile : '999999999', emergencyNumber : '9211884545'},
